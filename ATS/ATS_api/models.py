@@ -72,6 +72,7 @@ class RequesterHistory(models.Model):
     )
     receiver = models.CharField(max_length=100)
     status = models.CharField(max_length=50, default='Pending')
+    transportation_status = models.CharField(max_length=50, default='NOT_APPLIED')
 
 
 class RequesterHistorySerializer(serializers.ModelSerializer):
