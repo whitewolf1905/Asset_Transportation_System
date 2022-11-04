@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "f5e4e189-00af-44bc-88f7-6c46182169f4",
+		"name": "ATS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rider travel Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/rider_info/111"
+			},
+			"response": []
+		},
+		{
+			"name": "Add rider info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"travel_from\": \"Agra\",\n    \"travel_to\": \"Jaipur\",\n    \"travel_date\": \"2022-12-02\",\n    \"travel_medium\": \"TRAIN\",\n    \"asset_quantity\": 11\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/rider_info/121"
+			},
+			"response": []
+		},
+		{
+			"name": "Requester History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/asset_request/1001"
+			},
+			"response": []
+		},
+		{
+			"name": "Add requester Asset Transport request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pick_from\": \"Agra\",\n    \"deliver_to\": \"Jaipur\",\n    \"deliver_date\": \"2022-12-2\",\n    \"asset\": 8,\n    \"asset_type\": \"PACKAGE\",\n    \"asset_sensitivity\": \"HIGHLY_SENSITIVE\",\n    \"receiver\": \"Ahuja\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/asset_request/1001"
+			},
+			"response": []
+		},
+		{
+			"name": "Find matched",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/matched_rider/1001?page=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"matched_rider",
+						"1001"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rider_row_id\": 7,\n    \"requester_row_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/apply_request"
+			},
+			"response": []
+		}
+	]
+}
