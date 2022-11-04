@@ -1,26 +1,6 @@
 from django.db import models
 from rest_framework import serializers
-
-
-Travel_Choice = [
-    ('BUS', 'BUS'),
-    ('CAR', 'CAR'),
-    ('TRAIN', 'TRAIN')
-]
-
-Asset_Sensitivity = [
-    ('HIGHLY_SENSITIVE', 'HIGHLY_SENSITIVE'),
-    ('SENSITIVE', 'SENSITIVE'),
-    ('NORMAL', 'NORMAL')
-]
-
-Asset_Type = [
-    ('LAPTOP', 'LAPTOP'),
-    ('TRAVEL_BAG', 'TRAVEL_BAG'),
-    ('PACKAGE', 'PACKAGE')
-]
-
-# Create your models here.
+from .constants import Travel_Choice, Asset_Type, Asset_Sensitivity
 
 
 class Requesters(models.Model):
